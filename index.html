@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MediaQueries</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <div>
+      <a href="/Users/mastudo/Desktop/webデザ/Lesson/HTML/HTML.html">HTML編</a>
+      <a href="/Users/mastudo/Desktop/webデザ/Lesson/CSS basic/CSS basic.html">CSS基本編</a>
+      <a href="/Users/mastudo/Desktop/webデザ/Lesson/CSS Advanced/CSS advanced.html">CSS応用編</a>
+      <a href="/Users/mastudo/Desktop/webデザ/Lesson/CSS Selectors/selectors.html">Selectors編</a>
+    </div>
+    <div>
+      <a href="/Users/mastudo/Desktop/webデザ/Lesson/CSS Flexbox/flexbox.html">Flexbox編</a>
+      <p>MediaQueries編</p>
+      <a href="/Users/mastudo/Desktop/webデザ/Lesson/CSS Animation/Animation.html">Animation編</a>
+      <a href="/Users/mastudo/Desktop/webデザ/Lesson/CSS Nesting/Nesting.html">Nesting編</a>
+      <a href="/Users/mastudo/Desktop/webデザ/Lesson/CSS Grid/inndex.html">Grid編</a>
+    </div>
+  </header>
+  <a href="/Users/mastudo/Desktop/webデザ/Lesson/index.html" class="a-lesson">←Lesson</a>
+  <a class="a-top" href="#">↑TOP</a>
+
+  <main>
+    <h1>メディアクエリー</h1>
+    <section>
+      <h2>概要</h2>
+      <p>
+        サイトを利用するデバイスの状態によってスタイルを切り替えるために必要な仕組み<br>スマホのブラウザではこういうレイアウト、タブレットだとこう、PCだとこうというように、<br>使用するブラウザのサイズに応じてレイアウトを切り替えたい場合によく使われる。
+      </p>
+      <small>このようにブラウザ幅に応じてレイアウトを変えるデザインは「レスポンシブwebデザイン」と呼ばれる</small>
+    </section>
+    <section>
+      <h2><code>@media( )</code></h2>
+      <p>メディアクエリーを指定するためのセレクター。<br><code>( )</code>内には、切替の条件を入力する。（ブレイクポイント）</p>
+      <p>
+        (入力例)<br><code>@media(min-width:600px;)</code><br>＝ブラウザ幅が最低600pxまでは（600px以上で）指定したスタイルに切り替わる<br><code>@media(max-width:800px;)</code><br>＝ブラウザ幅が最大800pxまでは指定したスタイルで表示する
+      </p>
+      <p>
+        ブレイクポイントごとにメディアクエリーを複数設定する場合、<br>あとから書いたスタイルが優先されるため<br><code>min-</code>なら幅が狭い順、<code>max-</code>なら幅が広い順に指定していく必要がある。<br><code>min-</code>で狭い順に指定することを「モバイルファースト」、<br><code>max-</code>で広い順に指定することを「デスクトップファースト」という
+      </p>
+    </section>
+    <section>
+      <h2>要素の非表示・出現</h2>
+      <p>ブレイクポイントを境に、ある要素を非表示にしたり、出現させたりしたい場合には、<code>display</code>プロパティを使用する</p>
+      <h3><code>display:none;</code></h3>
+      <p>ページから表示を消すという指定の値。<br>メディアクエリーの中で特定の要素にこの値を指定することで、ブレイクポイントを境に指定した要素が非表示になる。</p>
+      <h3><code>display:(デフォルトの値);</code></h3>
+      <p>デフォルトの画面では要素を消しておき、ブレイクポイントを境に出現させたい、という場合には<br>初めから
+        HTMLの要素に対して<code>display:none;</code>を指定し、メディアクエリーの中で非表示を解除するという動きを行う。<br>その際、「非表示の解除」とするためには<code>display:(デフォルトの値);</code>を指定する必要がある<br><code>&lt;p&gt;</code>や<code>&lt;section&gt;</code>などブロックボックスの場合は<code>display:block;</code>、<br><code>&lt;a&gt;</code>や<code>&lt;img&gt;</code>などインラインボックスの場合は<code>display:inline;</code>を指定。
+      </p>
+    </section>
+  </main>
+</body>
+
+</html>
